@@ -1,5 +1,5 @@
 :root {
-  --teal: rgb(125, 230, 165); 
+  --teal: rgb(105, 201, 161); 
   --lgtgrn: rgb(245, 255, 213);
   --white: white;
   --medgrn: #BAC9A9;
@@ -78,7 +78,7 @@ h1 {
   font-family: 'Roboto', sans-serif;
   font-size: 35pt;
   color: white;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: rgb(226, 200, 188);
   -webkit-text-stroke-width: 1.2px;
   
 }
@@ -144,12 +144,12 @@ transition-duration: 0.4s;
 }
 
 .button-primary:hover {
-background-color: var(--white);
+background-color: rgb(226, 200, 188);
 color: black;
 }
 
 .button-primary:focus {
-background-color: var(--white);
+background-color: rgb(226, 200, 188);
 outline:none;
 
 }
@@ -185,7 +185,7 @@ h4 {
 }
 
 .remove-btn:active {
-  background-color: #838383;
+  background-color: rgb(226, 200, 188);
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
