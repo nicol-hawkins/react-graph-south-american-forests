@@ -8,6 +8,8 @@ class App extends Component {
     super(props);
   
     this.state = {
+      year: '2016',
+      counter: 0,
       data:[],
       chosenCountries: [],
       availableCountries: [],
@@ -28,6 +30,15 @@ class App extends Component {
         console.log('Available countries: ', result)
       },
     )
+  }
+
+  //get the year
+  updateYear = (ev) => {
+
+    this.setState({
+      year: ev.target.value },
+      () => console.log('update year', this.state.year));
+    
   }
 
   //toggle visibility of data, not really being used anymore//
@@ -67,7 +78,8 @@ class App extends Component {
 
     this.setState ({
       chosenCountries: chosenCountries,
-      availableCountries: availableCountries
+      availableCountries: availableCountries,
+      counter: this.state.counter + 1,
     });
 
   };
@@ -104,10 +116,11 @@ render() {
       <section className="TitleBar">
         <div className="test">
         
-            <h1>Percentage of Forest Land in <br></br>South American Countries:</h1>
+            <h1>Percentage of Forest Land in <br></br>South American Countries: <span className="output"> {this.state.year} </span> </h1>
+                
 
         <div className="yearChooser">
-            <select id="select" className="YearChooser-select">
+            <select onChange={this.updateYear} id="select" className="YearChooser-select">
                 <option value="">Select Year</option>
                 <option value="2016">2016</option>
                 <option value="2015">2015</option>
@@ -117,17 +130,7 @@ render() {
                 <option value="2011">2011</option>
                 <option value="2010">2010</option>
             </select>
-
-            <button className="go-btn" onClick="getOption()"> 
-                Go 
-            </button>
-
-            <div className="yearDisplay">
-                <p className="year">
-                    {/* The year selected is:  */}
-                    <span className="output"> </span> 
-                </p>
-            </div>
+  
        
         </div>
         </div>
@@ -141,7 +144,7 @@ render() {
         {
         this.state.data.map((data, index) => (
           <button key={index}className="button-primary" onClick={() => {this.onChooseCountry(index);
-          }}><span class="btn-content" tabindex="-1">
+          }}><span className="btn-content" tabindex="-1">
       </span>{data.label}</button>
          ))
         } 
@@ -150,7 +153,7 @@ render() {
       <div className="BarChart" id="results">
 
           {/* original toggle js not being used. saving for reference */}
-          {
+          {/* {
             this.state.data.map(data => (
             data.visible === true ? (
               
@@ -163,7 +166,7 @@ render() {
                 null
               )
             ))
-          }
+          } */}
 
           {/* generate divs with remove button */}
           {

@@ -1,0 +1,14 @@
+{
+            this.state.data.map(data => (
+            data.visible === true ? (
+              
+            <div key={data} className="bar--show bar" id={data.label} style={{height: data.percentage + "px"}}> 
+              {data.label} = 
+              {data.percentage} %
+              {console.log('label: ',data.label, 'percentage: ', data.percentage)}
+            </div>
+            ) : (
+                null
+              )
+            ))
+          }

@@ -83,6 +83,10 @@ h1 {
   
 }
 
+.output {
+  -webkit-text-fill-color: var(--darkgrn);
+}
+
 .yearChooser {
   margin-left: 200px;
 }
@@ -91,13 +95,6 @@ h1 {
   width: 125px;
   height: 25px;
   outline:none;
-}
-
-.go-btn {
-  font-size: 12px;
-  color: black;
-  margin: 10px;
-  width: 35px;
 }
 
 
